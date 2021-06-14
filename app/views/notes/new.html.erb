@@ -1,1 +1,20 @@
-<%= render 'form', note: @note %>
+<h1>New note</h1>
+ <%# <%= render 'form', note: @note %>  
+
+ <%= form_with model: @note do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body, class: 'materialize-textarea' %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+

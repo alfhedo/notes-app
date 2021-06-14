@@ -6,16 +6,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">      
+
   </head>
 
   <body>
    <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <div class="brand-logo center">
+          <div class="">
+          <%= link_to notes_path, class: 'brand-logo center' do %>
             My note collection
+          <% end %>
+                   
           </div>
         </div>
       </nav>

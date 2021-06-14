@@ -4,11 +4,12 @@
 // that code so it'll be compiled.
 
 import 'materialize-css/dist/js/materialize'
-
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import '../stylesheets/application'
+
 
 Rails.start()
 Turbolinks.start()
@@ -17,3 +18,6 @@ ActiveStorage.start()
 document.addEventListener('turbolinks:load', function () {
   M.updateTextFields();
 })
+
+require("trix")
+require("@rails/actiontext")
