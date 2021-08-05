@@ -5,7 +5,7 @@ class NotesController < ApplicationController
     filters = params[:filters]&.to_unsafe_h&.symbolize_keys
 
     if filters && filters[:title].present?
-      @notes = Note.search_by_title(filters[:title.downcase])
+      @notes = Note.search_by_title(filters[:title])
     else
       @notes = Note.all.sort_by { |note| [note.created_at, note.title] }.reverse
       
