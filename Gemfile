@@ -13,6 +13,7 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'tzinfo-data'
 
 group :development, :test do
   gem 'pry'
@@ -22,5 +23,3 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
