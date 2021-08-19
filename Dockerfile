@@ -4,9 +4,14 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN apt-get update -y \
-  && apt-get install -y npm \
-  && npm install -g yarn
+RUN apk --update add --no-cache --virtual \
+  run-dependencies \
+  build-base \
+  sqlite-dev \
+  npm \
+  nodejs
+
+RUN npm install -g yarn
 
 RUN bundle install
 
