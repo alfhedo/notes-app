@@ -1,5 +1,12 @@
 version: "3"
 services:
+  notes-db:
+    image: mariadb:10-focal
+    container_name: notes-db
+    volumes: ["db:/var/lib/mysql"]
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=TRUE
+
   notes-app:
     build: .
     container_name: notes-app
@@ -7,4 +14,7 @@ services:
     volumes: [".:/usr/src/app"]      
     command: ./entrypoint.sh
     working_dir: /usr/src/app
+    depends_on: ["notes-db"]
 
+volumes: 
+  db:
