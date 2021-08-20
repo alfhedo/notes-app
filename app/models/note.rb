@@ -5,7 +5,7 @@ class Note < ApplicationRecord
   def self.search_by_title(keywords)
     keywords = keywords.gsub(/[%_\\]/, '\\\\\\&')
     keywords.split.reduce(Note) do |klass, word|
-      klass.where "UPPER(title) LIKE (?) ESCAPE '\\'", "%#{word.upcase}%"
+      klass.where "UPPER(title) LIKE (?)", "%#{word.upcase}%"
     end.order(:title).limit(2)
   end
 end
